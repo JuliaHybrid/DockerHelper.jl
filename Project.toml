@@ -1,0 +1,8 @@
+name = "DockerHelper"
+uuid = "e46d447c-a529-41c5-9056-c3161bfabafa"
+authors = ["overshiki <le.niu@hotmail.com>"]
+version = "0.1.0"
+
+[deps]
+EasyMonad = "e4dbf12b-b8cf-4673-b6eb-8b0d4667dd49"
+NestedVector = "03826054-d4ac-482b-9e88-e171687816a8"
