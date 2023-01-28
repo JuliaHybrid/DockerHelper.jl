@@ -2,16 +2,16 @@
 
 julia_version = "1.8.2"
 manifest_format = "2.0"
-project_hash = "00124cffa3b4c204340d76d7e33392e110c8af81"
+project_hash = "df4c2debc7cbe3c42fc2f5a4c1c8ef0ef9571b53"
 
 [[deps.Base64]]
 uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
 [[deps.EasyMonad]]
-deps = ["MacroTools"]
-git-tree-sha1 = "884193dc4d8128f8a5d1991249b4de926dd0d87a"
+deps = ["MacroTools", "MonadInterface"]
+git-tree-sha1 = "251e368fe9379aef3c0eacf6c23a24be6104ffe3"
 repo-rev = "main"
-repo-url = "https://github.com/overshiki/EasyMonad.jl.git"
+repo-url = "https://github.com/JuliaHybrid/EasyMonad.jl.git"
 uuid = "e4dbf12b-b8cf-4673-b6eb-8b0d4667dd49"
 version = "0.1.0"
 
@@ -25,9 +25,16 @@ version = "0.5.10"
 deps = ["Base64"]
 uuid = "d6f4376e-aef5-505a-96c1-9c027394607a"
 
+[[deps.MonadInterface]]
+git-tree-sha1 = "7e4db9bbbae34fafd2e4a8784e9755d8524ba299"
+repo-rev = "main"
+repo-url = "https://github.com/JuliaHybrid/MonadInterface.jl.git"
+uuid = "4c81018e-a0fd-4a0d-a53b-43c59f4db333"
+version = "0.1.0"
+
 [[deps.NestedVector]]
-deps = ["EasyMonad"]
-git-tree-sha1 = "dcaae5eb6c430e69c270b85d0f89894ba23c2395"
+deps = ["EasyMonad", "MonadInterface"]
+git-tree-sha1 = "72c74f8503843017b18bfa6cff1d4d7b5e1a3794"
 repo-rev = "main"
 repo-url = "https://github.com/overshiki/NestedVector.jl.git"
 uuid = "03826054-d4ac-482b-9e88-e171687816a8"
@@ -49,8 +56,8 @@ version = "0.7.0"
 uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
 
 [[deps.StringParser]]
-deps = ["EasyMonad", "NestedVector"]
-git-tree-sha1 = "09004685c138a19cf256447409ac2e0a4bae699a"
+deps = ["EasyMonad", "MonadInterface", "NestedVector"]
+git-tree-sha1 = "e457a40ffb19d7f572f1b61890c6155a9fb68898"
 repo-rev = "main"
 repo-url = "https://github.com/overshiki/StringParser.jl.git"
 uuid = "82027a8e-1502-4d66-bc09-336c403f5d02"

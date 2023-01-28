@@ -1,5 +1,5 @@
 using EasyMonad
-import EasyMonad.(>>)
+import MonadInterface.(>>>)
 using Printf
 using NestedVector
 import NestedVector.(++)
@@ -115,8 +115,8 @@ end
 (filter_split!(vs::Vector{T}, pred::UnaryFunction{T, Bool}, result::Vector{Vector{T}})::Vector{Vector{T}}) where T = begin 
     length(vs)==0 && return result 
     x, xs = vs[1], vs[2:end]
-    x >> pred && push!(result[1], x)
-    !(x >> pred) && push!(result[2], x)
+    x >>> pred && push!(result[1], x)
+    !(x >>> pred) && push!(result[2], x)
     return filter_split!(xs, pred, result)
 end
 
@@ -159,7 +159,7 @@ get_tag_id()::Vector{Tuple{String, String}} = begin
     end
     @assert table[1][1]=="REPOSITORY"
     tags = map(table[2:end]) do maybeAlist 
-        maybeAlist >> maybeAlist -> (maybeAlist[1] * ":" * maybeAlist[2], maybeAlist[3])
+        maybeAlist >>> maybeAlist -> (maybeAlist[1] * ":" * maybeAlist[2], maybeAlist[3])
     end
     tags_id = Vector{Tuple{String, String}}(filter(x->!(x isa Nothing), tags))
     # tags_id = Dict(map(x->x[1], tags_id) .=> map(x->x[2], tags_id))
@@ -222,7 +222,7 @@ end
 
 run_clean(B::Builder) = begin 
     tag = B.tag
-    probe_path(B.dir) >> x->rm(x, force=true, recursive=true)
+    probe_path(B.dir) >>> x->rm(x, force=true, recursive=true)
     if is_tag_exist(tag)
         tag_id_dict = hash_tag_id(get_tag_id())
         id = tag_id_dict[tag]

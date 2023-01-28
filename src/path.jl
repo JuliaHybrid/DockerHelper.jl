@@ -1,9 +1,5 @@
 using EasyMonad
-# import EasyMonad.(>>)
-using Printf
-# using NestedVector
-# import NestedVector.(++)
-
+# using Printf
 
 struct Path 
     p::Maybe{String}

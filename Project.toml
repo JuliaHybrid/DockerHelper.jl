@@ -5,6 +5,7 @@ version = "0.1.0"
 
 [deps]
 EasyMonad = "e4dbf12b-b8cf-4673-b6eb-8b0d4667dd49"
+MonadInterface = "4c81018e-a0fd-4a0d-a53b-43c59f4db333"
 NestedVector = "03826054-d4ac-482b-9e88-e171687816a8"
 Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 StringParser = "82027a8e-1502-4d66-bc09-336c403f5d02"

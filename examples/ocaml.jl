@@ -3,7 +3,7 @@ using DockerHelper
 ocaml() = begin 
     dep_tag = "ubuntu:18.04"
     tag = "le/ocaml:5.0.0"
-    maintain_info = Maintainer("le.niu@xtalpi.com")
+    maintain_info = Maintainer("le.niu@hotmail.com")
 
 
     run_commands = [
